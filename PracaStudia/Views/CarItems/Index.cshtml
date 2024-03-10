@@ -1,0 +1,31 @@
+﻿@using PracaStudia.Data
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<CarItem>
+
+<table class="table table-responsive table-bordered">
+    <thead>
+        <th>Name</th>
+        <th>Model</th>
+        <th>VIN</th>
+        <th>Year</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Model</td>
+                <td>@item.VIN</td>
+                <td>@item.Year</td>
+                <td>
+                    <a asp-controller="CarItems" asp-action="Details" asp-route-id="@item.CarId">Więcej</a>
+                 </td>
+            </tr>
+        }
+    </tbody>
+</table>
