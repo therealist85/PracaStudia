@@ -18,9 +18,32 @@ namespace PracaStudia.Controllers
             return View();
         }
 
+        public IActionResult Kontakt()
+        {
+            var model = new Kontakt()
+            {
+                Name = "Piotr Pyk",
+                Adress = "Kielce, os. KSM",
+             };
+            return View(model);
+        }
+
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Details()
+        {
+            var model = new List<Opis>()
+            {
+                new Opis()
+                {
+                    typ = "samochód osobowy",
+                    przebieg = "125.500 km"
+                }
+            };
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

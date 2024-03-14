@@ -1,9 +1,8 @@
-﻿
+﻿@model List<Opis>
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
+
+Typ | Przebieg
+@foreach(var opis in Model)
+{
+    <p>@opis.typ | @opis.przebieg</p>
 }
-
-<h2>Szczegóły samochodu</h2>
-<h6>Nazwa</h6>
